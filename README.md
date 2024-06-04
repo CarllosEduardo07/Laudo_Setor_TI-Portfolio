@@ -2,16 +2,18 @@
 <p align="center">
  <a href="#about">Sobre</a> • 
   <a href="#stacks">Tecnologias Utilizadas</a> •
-   <a href="#libs">Bibliotecas Usadas</a> • 
+   <a href="#libs">Bibliotecas Usadas</a>
 </p>
 
 <h2 id="about">📌 Sobre</h2>
 Esse projeto foi desenvolvido para facilitar o processor de devolução de equipamentos que antes era feito no Word, então eu desenvolvi com o intuito de facilitar esses processo
 
-<h2 id="stacks">📌 Tecnologias Utilizadas</h2>
-- Angular
-- Tailwind CSS
-- TypeScript
+<h2 id="stacks">🚀 Tecnologias Utilizadas</h2>
+
+<li>Angular</li>
+<li>Tailwind CSS</li>
+<li>TypeScript</li>
+
 
 ## Laudo em Geral
 ![laudo em Geral](https://github.com/CarllosEduardo07/Laudo_Setor_TI/assets/80606019/2d6da704-31e0-4e19-98e0-8bc6fbacd96d)
@@ -23,7 +25,7 @@ Esse projeto foi desenvolvido para facilitar o processor de devolução de equip
 ![Laudo Para Celular](https://github.com/CarllosEduardo07/Laudo_Setor_TI-Portfolio/assets/80606019/cd257416-101b-4d07-ad42-fba0f3cfd5c7)
 
 
-<h2 id="libs">📌 Bibliotecas Usadas</h2>
+<h2 id="libs">📚 Bibliotecas Usadas</h2>
 Biblioteca de Icones [Lucide](https://lucide.dev/):
 
 ```bash
