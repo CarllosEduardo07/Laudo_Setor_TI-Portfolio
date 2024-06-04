@@ -6,9 +6,14 @@ Tecnologias Utilizadas:
 - Tailwind CSS
 - TypeScript
 
+## Laudo em Geral
+![laudo em Geral](https://github.com/CarllosEduardo07/Laudo_Setor_TI/assets/80606019/2d6da704-31e0-4e19-98e0-8bc6fbacd96d)
 
-![laudo](https://github.com/CarllosEduardo07/Laudo_Setor_TI/assets/80606019/2d6da704-31e0-4e19-98e0-8bc6fbacd96d)
+## Laudo Para Computador
+![Laudo Para Computador](https://github.com/CarllosEduardo07/Laudo_Setor_TI-Portfolio/assets/80606019/4f83ef5f-0530-4c97-9b94-28708cd3aa17)
 
+## Laudo Para Celular
+![Laudo Para Celular](https://github.com/CarllosEduardo07/Laudo_Setor_TI-Portfolio/assets/80606019/cd257416-101b-4d07-ad42-fba0f3cfd5c7)
 
 
 ## Bibliotecas Usadas:
