@@ -44,4 +44,10 @@ Biblioteca de máscara em campos de furmulário [ngx-mask - (Angular version 17.
 npm install --save ngx-mask
 ```
 
+Biblioteca de Componentes UI [Angular Material](https://material.angular.io/):
+
+```bash
+ng add @angular/material
+```
+
 
