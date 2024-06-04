@@ -1,0 +1,17 @@
+<div class="w-full h-26 fixed flex flex-col bottom-0 bg-white z-10">
+    <div class="flex justify-evenly items-center">
+        <div class="flex flex-col">
+            <button class="px-3 py-1 bg-white flex flex-col justify-center items-center rounded-2xl hover:bg-zinc-200" (click)="eventClickVisualizarPdf()">
+                <lucide-icon name="printer" class="size-5"></lucide-icon>
+                <span class="text-sm">Visualizar PDF</span>
+            </button>
+        </div>
+        <div class="flex flex-col">
+            <button class="px-3 py-1 bg-white flex flex-col justify-center items-center rounded-2xl hover:bg-zinc-200" (click)="eventClickBaixarPdf()">
+                <lucide-icon name="FileText" class="size-5"></lucide-icon>
+                <span class="text-sm">Gerar PDF</span>
+            </button>
+        </div>
+    </div>
+    <p class="p-2 text-center text-zinc-400 text-sm">Desenvolvido Por Carlos Eduardo Albuquerque</p>
+</div>

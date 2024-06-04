@@ -1,0 +1,133 @@
+<div class="h-full pt-24 bg-zinc-300">
+    <section class="min-h-[1750px] md:min-h-[700px] xl:min-h-full bg-white rounded-xl flex flex-col justify-start items-center">
+        <h2 class="my-4 text-2xl font-bold text-center">Laudo Para Celular</h2>
+
+        <form class="w-11/12 md:flex md:space-x-10 md:justify-center md:items-center md:overflow-auto">
+            <div class="w-auto md:w-96 mb-10 md:mb-0 grid grid-rows-5 gap-1 items-center">
+                <h3 class="text-lg text-zinc-600">Informações do Aparelho</h3>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Marca</mat-label>
+                    <input matInput placeholder="Ex. Xiaomi" autocomplete="off" class="" name="marca" [(ngModel)]="marca" autocomplete="off"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Modelo</mat-label>
+                    <input matInput placeholder="Ex. Redmi Note 8" autocomplete="off" name="modelo" [(ngModel)]="modelo" autocomplete="off"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Número</mat-label>
+                    <input matInput placeholder="(99) 9 1234-5678" autocomplete="off" [dropSpecialCharacters]="false" mask="(00) 0 0000-0000" name="numero" [(ngModel)]="numero" autocomplete="off"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>IMEI 1</mat-label>
+                    <input matInput mask="000000000000000" autocomplete="off" name="imei1" [(ngModel)]="imei1" autocomplete="off"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>IMEI 2</mat-label>
+                    <input matInput mask="000000000000000" autocomplete="off" name="imei2" [(ngModel)]="imei2" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+
+            <div class="w-auto md:w-[500px] gap-10">
+                <h3 class="mb-8 text-lg text-zinc-600">Status Atual do Aparelho</h3>
+                <div class="mb-10 md:mb-16 flex flex-col md:grid md:grid-cols-2 gap-2 md:items-center">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tela Trincada</mat-label>
+                        <mat-select [(ngModel)]="telaTrincada" name="telaTrincada">
+                            <mat-option value="Sim">Sim</mat-option>
+                            <mat-option value="Não">Não</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Touch Screen</mat-label>
+                        <mat-select [(ngModel)]="touchScreen" name="touchScreen">
+                            <mat-option value="Funcionando">Funcionando</mat-option>
+                            <mat-option value="Defeito">Defeito</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Alto-Falante Auricular</mat-label>
+                        <mat-select [(ngModel)]="altoFalanteAuricular" name="altoFalanteAuricular">
+                            <mat-option value="Funcionando">Funcionando</mat-option>
+                            <mat-option value="Defeito">Defeito</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Alto-Falante</mat-label>
+                        <mat-select [(ngModel)]="altoFalante" name="altoFalante">
+                            <mat-option value="Funcionando">Funcionando</mat-option>
+                            <mat-option value="Defeito">Defeito</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Microfone</mat-label>
+                        <mat-select [(ngModel)]="microfone" name="microfone">
+                            <mat-option value="Funcionando">Funcionando</mat-option>
+                            <mat-option value="Defeito">Defeito</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Entrada do Carregador</mat-label>
+                        <mat-select [(ngModel)]="entradaDoCarregador" name="entradaDoCarregador">
+                            <mat-option value="Funcionando">Funcionando</mat-option>
+                            <mat-option value="Defeito">Defeito</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Veio Carregador ?</mat-label>
+                        <mat-select [(ngModel)]="veioCarregador" name="selectVeioCarregador">
+                            <mat-option value="Sim">Sim</mat-option>
+                            <mat-option value="Não">Não</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    @if (veioCarregador === 'Sim') {
+                    <mat-form-field appearance="outline">
+                        <mat-label>Estado do Carregador</mat-label>
+                        <mat-select name="estadoDoCarregador" [(ngModel)]="estadoDoCarregador">
+                            <mat-option value="Funcionando">Funcionando</mat-option>
+                            <mat-option value="Defeito">Defeito</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    }
+                </div>
+            </div>
+
+            <div class="w-auto md:w-96 gap-2 grid grid-rows-4 items-center">
+                <mat-form-field appearance="outline" class="w-full h-20">
+                    <mat-label>Quem Solicitou ?</mat-label>
+                    <mat-select [(ngModel)]="solicitante" name="solicitante">
+                        @for (solicitante of colaboradorSolicitante; track solicitante) {
+                        <mat-option [value]="solicitante.value">{{ solicitante.viewValue }}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full h-20">
+                    <mat-label>Técnico Responsável ?</mat-label>
+                    <mat-select [(ngModel)]="tecnicos" name="tecnicoResponsavel">
+                        <mat-option value="Carlos Eduardo Albuquerque">Carlos Eduardo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full h-20">
+                    <mat-label>Motivo da Solicitação do Laudo</mat-label>
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="3" name="parecerTecnico" [(ngModel)]="motivoDoLaudo"></textarea>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full h-20">
+                    <mat-label>Parecer Técnico</mat-label>
+                    <textarea
+                        matInput
+                        placeholder="Ex. Defeito componente queimado"
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="3"
+                        name="parecerTecnico"
+                        [(ngModel)]="parecerTecnico"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </section>
+</div>
+<image-base64 (carregarImage)="onCarregarImagem($event)"></image-base64>
+<horario (horarioAtual)="onHorarioAtual($event)"></horario>
+<footer (visualizarPdf)="onVisualizarPdf()" (baixarPdf)="onBaixarPdf()"></footer>

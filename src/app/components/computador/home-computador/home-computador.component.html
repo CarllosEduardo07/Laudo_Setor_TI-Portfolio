@@ -1,0 +1,140 @@
+<div class="h-full pt-24 bg-zinc-300">
+    <section class="min-h-[1150px] lg:min-h-screen xl:min-h-full bg-white rounded-xl flex flex-col justify-start items-center">
+        <h2 class="my-4 text-2xl font-bold text-center">Laudo Computador</h2>
+
+        <form class="mt-5 h-full w-11/12">
+            <div class="gap-5 flex flex-col md:grid md:grid-cols-4">
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Categoria</mat-label>
+                    <mat-select [(ngModel)]="categoria" name="categoria">
+                        <mat-option value="Computador">Computador</mat-option>
+                        <mat-option value="Notebook">Notebook</mat-option>
+                        <mat-option value="Tablet">Tablet</mat-option>
+                        <mat-option value="All in One">All in One</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Placa Mãe</mat-label>
+                    <mat-select [(ngModel)]="placaMae" name="placaMae">
+                        <mat-option value="Funcionando">Funcionando</mat-option>
+                        <mat-option value="Defeito">Defeito</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Processador</mat-label>
+                    <input matInput placeholder="Ex. Intel Core I5-11600" name="processador" [(ngModel)]="processador" autocomplete="off"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Memoria Ram</mat-label>
+                    <mat-select [(ngModel)]="memoriaRam" name="memoriaRam">
+                        <mat-option value="2GB">2GB</mat-option>
+                        <mat-option value="4GB">4GB</mat-option>
+                        <mat-option value="8GB">8GB</mat-option>
+                        <mat-option value="16GB">16GB</mat-option>
+                        <mat-option value="32GB">32GB</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Fonte</mat-label>
+                    <mat-select [(ngModel)]="fonte" name="fonte">
+                        <mat-option value="Funcionando">Funcionando</mat-option>
+                        <mat-option value="Defeito">Defeito</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>HD</mat-label>
+                    <input matInput placeholder="Ex. SSD 120GB" name="hd" [(ngModel)]="hd" autocomplete="off"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Sistema Operacional</mat-label>
+                    <mat-select name="sistemaOperacional" [(ngModel)]="sistemaOperacional">
+                        <mat-option value="Windows 10">Windows 10</mat-option>
+                        <mat-option value="Windows 11">Windows 11</mat-option>
+                        <mat-option value="Windows 8.1">Windows 8.1</mat-option>
+                        <mat-option value="Windows 7">Windows 7</mat-option>
+                        <mat-option value="Linux">Linux</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Portas USB's</mat-label>
+                    <mat-select [(ngModel)]="portaUsb" name="portaUsb">
+                        <mat-option value="Funcionando">Funcionando</mat-option>
+                        <mat-option value="Defeito">Defeito</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+               @if (categoria === 'Notebook') {
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Mac 1:</mat-label>
+                    <input matInput placeholder="Ex. 00:1B:44:11:3A:B7" name="mac1" [(ngModel)]="mac1" autocomplete="off"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Mac 2:</mat-label>
+                    <input matInput placeholder="Ex. 00:1B:44:11:3A:B7" name="mac2" [(ngModel)]="mac2" autocomplete="off"/>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Mac 3:</mat-label>
+                    <input matInput placeholder="Ex. 00:1B:44:11:3A:B7" name="mac3" [(ngModel)]="mac3" autocomplete="off"/>
+                </mat-form-field>
+
+               }
+       </div>
+
+            <div class="pt-5 gap-5 grid grid-cols-2">
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Quem Solicitou ?</mat-label>
+                    <mat-select [(ngModel)]="solicitante" name="solicitante">
+                        @for (solicitante of colaboradorSolicitante; track solicitante) {
+                        <mat-option [value]="solicitante.value">{{ solicitante.viewValue }}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Técnico Responsável ?</mat-label>
+                    <mat-select [(ngModel)]="tecnicos" name="tecnicoResponsavel">
+                        <mat-option value="Carlos Eduardo Albuquerque">Carlos Eduardo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Problemas Encontrados</mat-label>
+                    <textarea
+                        matInput
+                        placeholder="Ex. Placa mãe em curto"
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="3"
+                        name="problemaEncontrados"
+                        [(ngModel)]="problemaEncontrados"
+                    ></textarea>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Parecer Técnico</mat-label>
+                    <textarea
+                        matInput
+                        placeholder="Ex. Defeito na Placa mãe"
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="3"
+                        name="parecerTecnico"
+                        [(ngModel)]="parecerTecnico"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </section>
+</div>
+<footer (visualizarPdf)="onVisualizarPdf()" (baixarPdf)="onBaixarPdf()"></footer>
+<image-base64 (carregarImage)="onCarregarImage($event)"></image-base64>
+<horario (horarioAtual)="onHorarioAtual($event)"></horario>

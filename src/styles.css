@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+@layer utilities {
+    .active {
+        /* scale-105 transition-all duration-300 ease-in-out */
+        @apply bg-zinc-200
+    }
+
+    /* codigindo o bug da labe e input flutuando no tailwind */
+    *,
+    ::before,
+    ::after {
+        border-style: none;
+    }
+}

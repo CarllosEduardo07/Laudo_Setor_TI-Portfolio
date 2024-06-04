@@ -1,0 +1,80 @@
+<div class="h-full pt-24 bg-zinc-300">
+    <section class="h-full lg:min-h-screen xl:min-h-full bg-white rounded-xl flex flex-col justify-start items-center">
+        <h2 class="my-4 text-2xl font-bold text-center">Laudo Geral</h2>
+
+        <form class="w-11/12 pt-5 space-y-10">
+            <div class="gap-5 grid grid-cols-2 items-center">
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label> Item </mat-label>
+                    <input name="item" [(ngModel)]="item" matInput autocomplete="off" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label> Modelo </mat-label>
+                    <input matInput name="modelo" [(ngModel)]="modelo" autocomplete="off" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Marca</mat-label>
+                    <input type="text" placeholder="Ex. Samsung" aria-label="Number" matInput name="marcarEquipamento" [formControl]="marcarEquipamento" [matAutocomplete]="auto" />
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                        @for (marca of filteredOptions | async; track marca) {
+                        <mat-option [value]="marca">{{ marca }}</mat-option>
+                        }
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label> Aparencia </mat-label>
+                    <input matInput placeholder=" Ex. Usado" name="aparencia" [(ngModel)]="aparencia" autocomplete="off"/>
+                </mat-form-field>
+            </div>
+
+            <div class="gap-5 grid grid-cols-2 items-center">
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Quem Solicitou ?</mat-label>
+                    <mat-select [(ngModel)]="solicitante" name="solicitante">
+                        @for (solicitante of colaboradorSolicitante; track solicitante) {
+                        <mat-option [value]="solicitante.value">{{ solicitante.viewValue }}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Técnico Responsável ?</mat-label>
+                    <mat-select [(ngModel)]="tecnicos" name="tecnicos">
+                        @for (tecnico of tecnicosResponsavel; track tecnico) {
+                        <mat-option [value]="tecnico.value">{{ tecnico.viewValue }}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Motivo da solicitação do laudo</mat-label>
+                    <textarea
+                        matInput
+                        placeholder="Ex. Defeito componente queimado"
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="3"
+                        name="motivoDoLaudo"
+                        [(ngModel)]="motivoDoLaudo"
+                    ></textarea>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Parecer Técnico</mat-label>
+                    <textarea
+                        matInput
+                        placeholder="Ex. Defeito componente queimado"
+                        cdkTextareaAutosize
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="3"
+                        name="parecerTecnico"
+                        [(ngModel)]="parecerTecnico"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+    </section>
+    <horario (horarioAtual)="atualizarHorarioPai($event)"></horario>
+    <image-base64 (carregarImage)="onCarregarImagem($event)"></image-base64>
+    <footer (visualizarPdf)="onVisualizarPdf()" (baixarPdf)="onBaixarPdf()"></footer>
+</div>
