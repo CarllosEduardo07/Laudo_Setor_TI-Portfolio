@@ -1,7 +1,14 @@
-## Laudo de Equipamentos
+<h1 align="center" style="font-weight: bold;">Laudo de Equipamentos</h1>
+<p align="center">
+ <a href="#about">Sobre</a> • 
+  <a href="#stacks">Tecnologias Utilizadas</a> •
+   <a href="#libs">Bibliotecas Usadas</a> • 
+</p>
+
+<h2 id="about">📌 Sobre</h2>
 Esse projeto foi desenvolvido para facilitar o processor de devolução de equipamentos que antes era feito no Word, então eu desenvolvi com o intuito de facilitar esses processo
 
-Tecnologias Utilizadas: 
+<h2 id="stacks">📌 Tecnologias Utilizadas</h2>
 - Angular
 - Tailwind CSS
 - TypeScript
@@ -16,8 +23,7 @@ Tecnologias Utilizadas:
 ![Laudo Para Celular](https://github.com/CarllosEduardo07/Laudo_Setor_TI-Portfolio/assets/80606019/cd257416-101b-4d07-ad42-fba0f3cfd5c7)
 
 
-## Bibliotecas Usadas:
-
+<h2 id="libs">📌 Bibliotecas Usadas</h2>
 Biblioteca de Icones [Lucide](https://lucide.dev/):
 
 ```bash
