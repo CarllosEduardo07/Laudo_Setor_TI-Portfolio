@@ -16,7 +16,8 @@ Esse projeto foi desenvolvido para facilitar o processor de devolução de equip
 
 
 ## Laudo em Geral
-![laudo em Geral](https://github.com/CarllosEduardo07/Laudo_Setor_TI/assets/80606019/2d6da704-31e0-4e19-98e0-8bc6fbacd96d)
+![laudo em Geral](https://github.com/CarllosEduardo07/Laudo_Setor_TI-Portfolio/assets/80606019/5086ebc4-a65f-47ee-8a7b-dd18b194446f)
+
 
 ## Laudo Para Computador
 ![Laudo Para Computador](https://github.com/CarllosEduardo07/Laudo_Setor_TI-Portfolio/assets/80606019/4f83ef5f-0530-4c97-9b94-28708cd3aa17)
